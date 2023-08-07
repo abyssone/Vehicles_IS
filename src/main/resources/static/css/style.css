@@ -93,18 +93,17 @@ body {
 .table_first-row {
     background-color: var(--color-jeally-bean-blue);
     color: var(--color-honeydew);
-    padding: 5px 15px;
 }
 
-.table tr {
+.table tr{
     border: 1px solid var(--color-honeydew);
 }
 
-.table tr:hover{
+.table tr:not(.table_first-row):hover{
     background-color: var(--color-crystal);
 }
 
-.table td {
+.table td, .table th {
     padding: 5px 15px;
 }
 

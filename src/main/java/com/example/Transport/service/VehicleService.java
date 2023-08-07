@@ -2,8 +2,10 @@ package com.example.Transport.service;
 
 import com.example.Transport.model.Vehicle;
 import com.example.Transport.repository.VehicleRepository;
+import com.example.Transport.util.Validator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
@@ -20,6 +22,8 @@ public class VehicleService {
     }
 
     public void add(Vehicle vehicle) {
+        if(!Validator.isValidVehicle(vehicle))
+            throw new IllegalArgumentException("Invalid vehicle obj: " + vehicle);
         vehicleRepository.save(vehicle);
     }
 
