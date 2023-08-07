@@ -93,6 +93,7 @@ body {
 .table_first-row {
     background-color: var(--color-jeally-bean-blue);
     color: var(--color-honeydew);
+    padding: 5px 15px;
 }
 
 .table tr {

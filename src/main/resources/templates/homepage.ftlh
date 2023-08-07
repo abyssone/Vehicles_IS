@@ -15,13 +15,13 @@
     <#if vehicles??>
     <table class="content_table table">
         <tr align="center" class="table_first-row">
-            <td>Марка</td>
-            <td>Модель</td>
-            <td>Категория</td>
-            <td>Гос номер</td>
-            <td>Тип ТС</td>
-            <td>Год выпуска</td>
-            <td>Наличие прицепа</td>
+            <th>Марка</th>
+            <th>Модель</th>
+            <th>Категория</th>
+            <th>Гос номер</th>
+            <th>Тип ТС</th>
+            <th>Год выпуска</th>
+            <th>Наличие прицепа</th>
         </tr>
         <#list vehicles as vehicle>
         <tr data-id="${vehicle.id}">
