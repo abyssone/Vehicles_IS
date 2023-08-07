@@ -137,5 +137,22 @@ body {
     border: none;
 }
 
+.form_warning {
+    color: var(--color-venetian-red);
+}
+
+.search-form_params input[type="text"], .search-form_params input[type="number"] {
+    border: 1px solid var(--color-jeally-bean-blue);
+    border-radius: .4em;
+    padding: 5px 5px;
+    outline: none;
+}
+
+.search-form_params input[type="text"]:focus, 
+.search-form_params input[type="number"]:focus {
+    border: 1px solid var(--color-space-cadet);
+    box-shadow: 0 0 10px 1px var(--color-jeally-bean-blue);
+}
+
 
 

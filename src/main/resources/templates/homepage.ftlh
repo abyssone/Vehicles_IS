@@ -35,7 +35,7 @@
         </tr>
     </#list>
     </table>
-    <form action="/" method="get" class="content_search-form" class="content_search-form">
+    <form action="/" method="get" class="content_search-form">
         <div class="search-form_params">
             <p>Марка<input type="text" name="make"></p>
             <p>Модель<input type="text" name="model"></p>
