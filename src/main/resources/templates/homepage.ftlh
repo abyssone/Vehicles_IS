@@ -46,7 +46,13 @@
             <p>Модель<input type="text" name="model"></p>
             <p>Категория<input type="text" name="category"></p>
             <p>Гос. Номер<input type="text" name="licensePlate"></p>
-            <p>Тип ТС<input type="text" name="type"></p>
+            <p>Тип ТС
+                <select name="type">
+                    <#list vehicleTypes as type>
+                    <option value="${type}">${type.getName()}</option>
+                </#list>
+                </select>
+            </p>
             <p>Год Выпуска<input type="number" name="yearOfManufacture" min="0"></p>
             <p>Прицеп<input type="checkbox" name="hasTrailer"></p>
         </div>
