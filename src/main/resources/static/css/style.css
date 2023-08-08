@@ -101,6 +101,7 @@ body {
 
 .table tr:not(.table_first-row):hover{
     background-color: var(--color-crystal);
+    cursor: pointer;
 }
 
 .table td, .table th {
@@ -131,6 +132,16 @@ body {
     gap: 5px;
 }
 
+.search-form_params input:not([type="checkbox"]),
+.search-form_params select {
+    width: 200px;
+}
+
+.search-form_params select {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .search-form_button {
     background-color: var(--color-space-cadet);
     color: var(--color-honeydew);
@@ -141,7 +152,9 @@ body {
     color: var(--color-venetian-red);
 }
 
-.search-form_params input[type="text"], .search-form_params input[type="number"] {
+.search-form_params input[type="text"], 
+.search-form_params input[type="number"],
+.search-form_params select {
     border: 1px solid var(--color-jeally-bean-blue);
     border-radius: .4em;
     padding: 5px 5px;
@@ -149,10 +162,13 @@ body {
 }
 
 .search-form_params input[type="text"]:focus, 
-.search-form_params input[type="number"]:focus {
+.search-form_params input[type="number"]:focus,
+.search-form_params select:focus {
     border: 1px solid var(--color-space-cadet);
     box-shadow: 0 0 10px 1px var(--color-jeally-bean-blue);
 }
+
+
 
 
 

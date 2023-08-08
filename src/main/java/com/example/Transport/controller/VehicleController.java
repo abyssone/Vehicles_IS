@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -15,7 +16,7 @@ public class VehicleController {
     private final VehicleService vehicleService;
     @GetMapping("/")
     public String homePage(Vehicle vehicle, Model model) {
-        model.addAttribute("vehicles", vehicleService.getVehicles());
+        model.addAttribute("vehicles", vehicleService.getVehiclesByParams(vehicle));
         model.addAttribute("vehicleTypes", Vehicle.Type.values());
         return "homepage";
     }

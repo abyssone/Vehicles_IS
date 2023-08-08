@@ -8,6 +8,7 @@
 </head>
 <body>
 <script defer src="js/script.js"></script>
+<script defer src="js/validateSearchForm.js"></script>
 <div class="content">
     <div class="content_header">
         <a href="/vehicle/add" class="header_link-button link-button">Добавить</a>
@@ -46,7 +47,7 @@
             <p>Категория<input type="text" name="category"></p>
             <p>Гос. Номер<input type="text" name="licensePlate"></p>
             <p>Тип ТС<input type="text" name="type"></p>
-            <p>Год Выпуска<input type="text" name="yearOfManufacture"></p>
+            <p>Год Выпуска<input type="number" name="yearOfManufacture" min="0"></p>
             <p>Прицеп<input type="checkbox" name="hasTrailer"></p>
         </div>
         <input type="submit" value="Поиск" class="input-button search-form_button">

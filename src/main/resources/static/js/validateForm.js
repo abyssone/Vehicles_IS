@@ -7,7 +7,6 @@ let submitButton = document.querySelector('.search-form_button');
 
 let warning = document.createElement('div');
 warning.className = 'form_warning';
-warning.innerHTML = `Недопустимое значение поля`;
 warning.style.opacity = '0';
 form.appendChild(warning);
 
@@ -19,7 +18,7 @@ submitButton.addEventListener('click', (event) => {
     for(let inp of textInputs) {
         if(inp.value == null || inp.value == '') {
             event.preventDefault();
-            addWarningText();
+            addWarningText(inp.getAttribute('name'));
             console.log(`Поле: ${inp.getAttribute('name')} пустое: ${inp.value}`);
         }
     }
@@ -27,13 +26,14 @@ submitButton.addEventListener('click', (event) => {
     if(yearInput.value == null || yearInput.value == '' ||
             Number(yearInput.value) < 1900 || Number(yearInput.value) > currYear) {
         event.preventDefault();
-        addWarningText();
+        addWarningText('Год: от 1900 до текущего');
         console.log(`Поле: ${yearInput.getAttribute('name')} недопустимое: ${yearInput.value}`);
     }
     
 });
 
-function addWarningText() {    
+function addWarningText(field) {
+    warning.innerHTML = `Ошибка в поле: ${field}`;
     warning.style.opacity = '1';
 }
 
