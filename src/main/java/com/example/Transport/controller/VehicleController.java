@@ -16,11 +16,13 @@ public class VehicleController {
     @GetMapping("/")
     public String homePage(Vehicle vehicle, Model model) {
         model.addAttribute("vehicles", vehicleService.getVehicles());
+        model.addAttribute("vehicleTypes", Vehicle.Type.values());
         return "homepage";
     }
 
     @GetMapping("vehicle/add")
-    public String createVehicle() {
+    public String createVehicle(Model model) {
+        model.addAttribute("vehicleTypes", Vehicle.Type.values());
         return "add-vehicle";
     }
 
@@ -33,6 +35,7 @@ public class VehicleController {
     @GetMapping("vehicle/info/{id}")
     public String vehicleInfo(@PathVariable(value = "id") Long id, Model model) {
         model.addAttribute("vehicle", vehicleService.getVehicleById(id));
+        model.addAttribute("vehicleTypes", Vehicle.Type.values());
         return "vehicle-info";
     }
 

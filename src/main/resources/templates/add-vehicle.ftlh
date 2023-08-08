@@ -14,11 +14,17 @@
     </div>
     <form action="/vehicle/add" method="post" class="content_search-form content_create-form">
         <div class="search-form_params">
-            <p>Марка<input type="text" name="make"></p>
-            <p>Модель<input type="text" name="model"></p>
-            <p>Категория<input type="text" name="category"></p>
-            <p>Гос номер<input type="text" name="licensePlate"></p>
-            <p>Тип ТС<input type="text" name="type"></p>
+            <p>Марка<input type="text" autocomplete="off" name="make"></p>
+            <p>Модель<input type="text" autocomplete="off" name="model"></p>
+            <p>Категория<input type="text" autocomplete="off" name="category"></p>
+            <p>Гос номер<input type="text" autocomplete="off" name="licensePlate"></p>
+            <p>Тип ТС
+                <select name="type">
+                    <#list vehicleTypes as type>
+                        <option value="${type}">${type.getName()}</option>
+                    </#list>
+                </select>
+            </p>
             <p>Год выпуска<input type="number" name="yearOfManufacture"></p>
             <p>Прицеп<input type="checkbox" name="hasTrailer"></p>
         </div>

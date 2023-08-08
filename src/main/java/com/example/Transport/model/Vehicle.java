@@ -19,10 +19,24 @@ public class Vehicle {
     private String model;
     private String category;
     private String licensePlate;
-    private String type;
+    private Type type;
     private int yearOfManufacture;
     private boolean hasTrailer;
 
+    public enum Type {
+        CAR ("Легковой автомобиль"),
+        TRUCK ("Грузовой автомобиль"),
+        BUS ("Автобус"),
+        MOTORBIKE ("Мотоцикл"),
+        MOPED ("Мопед");
+        private String name;
+        Type(String name) {
+            this.name = name;
+        }
+        public String getName() {
+            return this.name;
+        }
+    }
     public boolean getHasTrailer() {
         return this.hasTrailer;
     }

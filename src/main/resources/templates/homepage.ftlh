@@ -29,9 +29,13 @@
             <td>${vehicle.model}</td>
             <td>${vehicle.category}</td>
             <td>${vehicle.licensePlate}</td>
-            <td>${vehicle.type}</td>
+            <td>${vehicle.type.getName()}</td>
             <td>${vehicle.yearOfManufacture}</td>
-            <td>${vehicle.hasTrailer?c}</td>
+            <td>
+                <#if vehicle.hasTrailer>Есть
+                <#else>Нет
+                </#if>
+            </td>
         </tr>
     </#list>
     </table>

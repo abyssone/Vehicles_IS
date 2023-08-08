@@ -1,7 +1,7 @@
 let form = document.querySelector('.content_create-form');
 let allInputs = form.querySelectorAll('input');
 let textInputs = form.querySelectorAll('[type="text"]');
-let yearInput = form.querySelectorAll('[name="yearOfManufacture"]');
+let yearInput = form.querySelector('[name="yearOfManufacture"]');
 let currYear = new Date().getFullYear();
 let submitButton = document.querySelector('.search-form_button');
 

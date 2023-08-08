@@ -9,7 +9,8 @@ public class Validator {
         vehicle.getModel() != null && vehicle.getModel() != "" &&
         vehicle.getCategory() != null && vehicle.getCategory() != "" &&
         vehicle.getLicensePlate() != null && vehicle.getLicensePlate() != "" &&
-        vehicle.getType() != null && vehicle.getType() != "" &&
+                //TODO: correct validation of type
+        vehicle.getType() != null && //vehicle.getType() != "" &&
         vehicle.getYearOfManufacture() != 0) {
             return true;
         } else {
