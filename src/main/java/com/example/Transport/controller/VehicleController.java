@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class VehicleController {
     private final VehicleService vehicleService;
     @GetMapping("/")
-    public String homePage(Vehicle vehicle, Model model) {
-        model.addAttribute("vehicles", vehicleService.getVehiclesByParams(vehicle));
+    public String homePage(Vehicle vehicle, Model model,
+                           @RequestParam(required = false, name = "typeParam", defaultValue = "null") String type) {
+        model.addAttribute("vehicles", vehicleService.getVehiclesByParams(vehicle, type));
         model.addAttribute("vehicleTypes", Vehicle.Type.values());
         return "homepage";
     }

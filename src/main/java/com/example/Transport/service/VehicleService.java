@@ -4,13 +4,15 @@ import com.example.Transport.model.Vehicle;
 import com.example.Transport.repository.VehicleRepository;
 import com.example.Transport.util.Validator;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
+import org.yaml.snakeyaml.util.EnumUtils;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class VehicleService {
@@ -22,7 +24,13 @@ public class VehicleService {
     //TODO: implement method to search vehicles by parameters using sql queries
 
     //This non-optimized method is used because @Query does't recognize input params.
-    public List<Vehicle> getVehiclesByParams(Vehicle vehParams) {
+    public List<Vehicle> getVehiclesByParams(Vehicle vehParams, String type) {
+        log.info(type);
+        try {
+            vehParams.setType(EnumUtils.findEnumInsensitiveCase (Vehicle.Type.class, type));
+        } catch (IllegalArgumentException e) {
+            vehParams.setType(null);
+        }
         List<Vehicle> allVeh = vehicleRepository.findAll();
         List<Vehicle> filteredVeh;
         filteredVeh = allVeh.stream()

@@ -47,7 +47,8 @@
             <p>Категория<input type="text" name="category"></p>
             <p>Гос. Номер<input type="text" name="licensePlate"></p>
             <p>Тип ТС
-                <select name="type">
+                <select name="typeParam">
+                    <option value="null">Любой</option>
                     <#list vehicleTypes as type>
                     <option value="${type}">${type.getName()}</option>
                 </#list>
